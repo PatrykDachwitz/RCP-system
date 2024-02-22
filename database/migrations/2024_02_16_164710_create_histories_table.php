@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('day_id');
             $table->integer('user_id');
             $table->integer('work_minutes');
-            $table->timestamp('start_work');
-            $table->timestamp('end_work');
+            $table->timestamp('start_work')->nullable();
+            $table->timestamp('end_work')->nullable();
         });
     }
 
