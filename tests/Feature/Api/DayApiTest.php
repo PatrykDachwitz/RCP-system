@@ -2,11 +2,19 @@
 declare(strict_types=1);
 
 use App\Models\User;
+use App\Models\Day;
+use Illuminate\Support\Facades\DB;
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\deleteJson;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 use function Pest\Laravel\putJson;
+
+beforeEach(function () {
+    Day::factory()
+        ->count(60)
+        ->create();
+});
 
 describe('Test not Auth user', function () {
 
@@ -84,16 +92,110 @@ describe('Test not active user', function () {
     })->with('userNotActive');
 });
 
-describe('Test Show routing', function () {
+describe('Test Auth User for create routing', function () {
 
-    it('ceck index ', function () {
+   it('Check create day with correct permissions user', function (User $user) {
+       $day = [
+           'day' => 1,
+           'id' => 1,
+           'month' => 12,
+           'year' => 2024,
+           'day_week' => 2,
+           'legislative_holiday' => false,
+           'redirect' => route('days.show', [
+               'day' => 1
+           ])
+       ];
 
 
-        $user = \App\Models\User::factory()->create();
+       DB::table('days')->truncate();
 
-        actingAs($user)->getJson(route('days.index'))
-            ->assertOk();
+       $result = actingAs($user)
+           ->postJson(
+               route('days.store'),
+           $day
+           )->assertOk();
+
+       $contentResult = $result->getContent();
+
+       expect($contentResult)
+           ->toBeJson()
+           ->json()
+           ->toMatchArray($day);
+
+   })->with('userSuperAdminPermission');
+
+   it('Check request failed value for inputs', function (User $user, string $failedInputs) {
+       $failedInput = json_decode($failedInputs);
+        $result = actingAs($user)
+            ->postJson(route('days.store'), [
+                $failedInput->name => $failedInput->value
+            ])->assertStatus(422);
+
+        $contentResult = $result->getContent();
+
+        expect($contentResult)
+            ->json()
+            ->toHaveKey("errors.{$failedInput->name}");
+
+   })->with('userSuperAdminPermission', 'failedInputsRequest');
+
+   it('Check correct gate for create route only for super admin', function (User $user) {
+       $day = [
+           'day' => 1,
+           'id' => 1,
+           'month' => 12,
+           'year' => 2024,
+           'day_week' => 2,
+           'legislative_holiday' => false,
+           'redirect' => route('days.show', [
+               'day' => 1
+           ])
+       ];
+
+       actingAs($user)
+           ->postJson(
+               route('days.store'),
+               $day
+           )->assertStatus(403);
+   })->with('usersNotHavePermissionSuperAdmin');
 });
 
+
+describe('Test show routing', function () {
+    it('Test show isset structure', function (User $user) {
+
+        $day = ['id' => 65,
+            'day' => 1,
+            'month' => 12,
+            'year' => 2024,
+            'day_week' => 2,
+            'legislative_holiday' => false];
+
+       Day::factory()->create($day);
+
+      $result = actingAs($user)
+          ->getJson(route('days.show', [
+              'day' => 65
+          ]))
+      ->assertOk();
+
+      $content = $result->getContent();
+
+      expect($content)
+          ->toBeJson()
+          ->json()
+          ->toMatchArray($day);
+
+    })->with('usersActive');
+
+    it("Test not isset Day", function (User $user) {
+       actingAs($user)
+           ->getJson(route('days.show', [
+               'day' => 120
+           ]))
+           ->assertStatus(404);
+
+    })->with('usersActive');
 
 });

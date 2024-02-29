@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
@@ -27,7 +27,12 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('ActiveUser', function (User $user) {
-            if ($user->active === 1) return true;
+            if ($user->active === true) return true;
+            else return false;
+        });
+
+        Gate::define('SuperAdminPermissionUser', function (User $user) {
+            if ($user->super_admin === true) return true;
             else return false;
         });
     }

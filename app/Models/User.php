@@ -24,6 +24,7 @@ class User extends Authenticatable
         'department_id',
         'position_id',
         'active',
+        'super_admin',
     ];
 
     /**
@@ -47,5 +48,6 @@ class User extends Authenticatable
         'department_id' => 'integer',
         'position_id' => 'integer',
         'active' => 'boolean',
+        'super_admin' => 'boolean',
     ];
 }

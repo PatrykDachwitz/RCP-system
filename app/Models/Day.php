@@ -10,6 +10,7 @@ class Day extends Model
 {
     use HasFactory,SoftDeletes;
 
+    const NAME_ROUTE_SHOW = 'days.show';
     protected $fillable = [
       'day',
       'month',
@@ -22,7 +23,19 @@ class Day extends Model
         'day' => 'integer',
         'month' => 'integer',
         'year' => 'integer',
-        'day_week' => 'string',
+        'day_week' => 'integer',
         'legislative_holiday' => 'boolean',
+        'redirect' => 'string',
     ];
+
+    protected $appends = [
+        'redirect'
+    ];
+
+
+    function getRedirectAttribute(){
+        return route(self::NAME_ROUTE_SHOW, [
+            'day' => $this->id
+        ]);
+    }
 }
