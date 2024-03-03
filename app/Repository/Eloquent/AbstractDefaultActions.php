@@ -27,9 +27,12 @@ abstract class AbstractDefaultActions implements DefaultActionsInterfaces
 
     public function update(int $id, array $data)
     {
-        return $this->model
-            ->where('id', $id)
-            ->update($data);
+        $model = $this->findOrFail($id);
+
+        $model->update($data);
+        $model->save();
+
+        return $model;
     }
 
     public function delete(int $id)

@@ -11,4 +11,9 @@ class DayRepository extends AbstractDefaultActions implements \App\Repository\Da
     {
         $this->model = $model;
     }
+
+    public function get(int $padding = 40)
+    {
+        return parent::get($padding);
+    }
 }

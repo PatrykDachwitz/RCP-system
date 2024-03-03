@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Days\CreateRequest;
+use App\Http\Requests\Days\UpdateRequest;
 use App\Repository\DayRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -54,8 +55,10 @@ class DayController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, int $id)
+    public function update(UpdateRequest $request, int $id)
     {
+        if (Gate::denies('SuperAdminPermissionUser')) abort(403);
+
         return response($this->day
         ->update($id, $request->only(self::FILLABLE_PARAMS)), 200);
     }
@@ -65,7 +68,9 @@ class DayController extends Controller
      */
     public function destroy(int $id)
     {
+        if (Gate::denies('SuperAdminPermissionUser')) abort(403);
+
         return response($this->day
-            ->delete($id), 200);
+            ->delete($id), 100);
     }
 }
