@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repository\DayRepository as DayRepositoryInterface;
 use App\Repository\Eloquent\DayRepository;
+use App\Repository\HistoryRepository as HistoryRepositoryInterface;
+use App\Repository\Eloquent\HistoryRepository;
 use App\Repository\DepartmentRepository as DepartmentRepositoryInterface;
 use App\Repository\Eloquent\DepartmentRepository;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +32,10 @@ class RepositoryProvider extends ServiceProvider
         $this->app->singleton(
             DepartmentRepositoryInterface::class,
             DepartmentRepository::class,
+        );
+        $this->app->singleton(
+            HistoryRepositoryInterface::class,
+            HistoryRepository::class,
         );
     }
 }

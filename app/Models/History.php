@@ -22,7 +22,17 @@ class History extends Model
         'day_id' => 'integer',
         'user_id' => 'integer',
         'work_minutes' => 'integer',
-        'start_work' => 'datetime:d-m-Y H:i:s',
-        'end_work' => 'datetime:d-m-Y H:i:s',
+        'start_work' => 'datetime:Y-m-d H:i:s',
+        'end_work' => 'datetime:Y-m-d H:i:s',
     ];
+
+    protected $appends = [
+      'redirect'
+    ];
+
+    public function getRedirectAttribute() {
+        return route('histories.show', [
+            'history' => $this->id
+        ]);
+    }
 }

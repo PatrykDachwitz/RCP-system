@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+
+use App\Http\Controllers\Api\HistoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\DepartmentController;
@@ -29,4 +31,5 @@ Route::group([
 ], function () {
     Route::apiResource('days', DayController::class);
     Route::apiResource('departments', DepartmentController::class);
+    Route::apiResource('histories', HistoryController::class);
 });

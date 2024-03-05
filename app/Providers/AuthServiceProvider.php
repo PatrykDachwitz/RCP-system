@@ -35,5 +35,14 @@ class AuthServiceProvider extends ServiceProvider
             if ($user->super_admin === true) return true;
             else return false;
         });
+        Gate::define('isThisUser', function (User $user, int $idUser) {
+            if ($user->id === $idUser) return true;
+            else return false;
+        });
+
+        Gate::before(function (User $user, string $ability) {
+            if ($user->super_admin === true) return true;
+            else return null;
+        });
     }
 }
