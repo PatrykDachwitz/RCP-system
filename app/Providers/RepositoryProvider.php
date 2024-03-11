@@ -8,6 +8,8 @@ use App\Repository\HistoryRepository as HistoryRepositoryInterface;
 use App\Repository\Eloquent\HistoryRepository;
 use App\Repository\DepartmentRepository as DepartmentRepositoryInterface;
 use App\Repository\Eloquent\DepartmentRepository;
+use App\Repository\HolidayRepository as HolidayRepositoryInterface;
+use App\Repository\Eloquent\HolidayRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryProvider extends ServiceProvider
@@ -36,6 +38,10 @@ class RepositoryProvider extends ServiceProvider
         $this->app->singleton(
             HistoryRepositoryInterface::class,
             HistoryRepository::class,
+        );
+        $this->app->singleton(
+            HolidayRepositoryInterface::class,
+            HolidayRepository::class,
         );
     }
 }
