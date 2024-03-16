@@ -19,4 +19,15 @@ class Position extends Model
         'name' => 'string',
         'active' => 'boolean',
     ];
+
+    protected $appends = [
+      'redirect'
+    ];
+
+    public function getRedirectAttribute() {
+        return route('positions.show', [
+            'position' => $this->id
+        ]);
+    }
+
 }
