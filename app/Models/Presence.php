@@ -31,4 +31,14 @@ class Presence extends Model
         'time_on_sick_leave' => 'integer',
         'time_on_vacation' => 'integer',
     ];
+
+    protected $appends = [
+        'redirect'
+    ];
+    function getRedirectAttribute(){
+        return route('presences.show', [
+            'presence' => $this->id
+        ]);
+    }
+
 }

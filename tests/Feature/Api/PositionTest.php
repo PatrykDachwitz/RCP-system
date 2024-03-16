@@ -38,7 +38,6 @@ describe('Test auth User for post route', function () {
 
         $result = $response->getContent();
 
-        dump($result);
         expect($result)
             ->toBeJson()
             ->json()

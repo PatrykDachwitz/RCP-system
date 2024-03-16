@@ -12,6 +12,8 @@ use App\Repository\HolidayRepository as HolidayRepositoryInterface;
 use App\Repository\Eloquent\HolidayRepository;
 use App\Repository\PositionRepository as PositionRepositoryInterface;
 use App\Repository\Eloquent\PositionRepository;
+use App\Repository\PresenceRepository as PresenceRepositoryInterface;
+use App\Repository\Eloquent\PresenceRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryProvider extends ServiceProvider
@@ -48,6 +50,10 @@ class RepositoryProvider extends ServiceProvider
         $this->app->singleton(
             PositionRepositoryInterface::class,
             PositionRepository::class,
+        );
+        $this->app->singleton(
+            PresenceRepositoryInterface::class,
+            PresenceRepository::class,
         );
     }
 }
