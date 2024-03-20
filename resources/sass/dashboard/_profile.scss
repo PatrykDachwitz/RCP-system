@@ -1,0 +1,28 @@
+.profile {
+    background-color: $black-main;
+
+    @media (min-width: $breakpoints-lg) {
+        border-right: 1px solid $gray-second;
+    }
+
+    &__detail {
+        @media (min-width: $breakpoints-lg) {
+            border-bottom: 1px solid $gray-second;
+        }
+    }
+
+
+    &__marker {
+        background-color: $gray-main;
+        &-time {
+            z-index: 2 !important;
+            color: $black-main !important;
+            font-weight: 750;
+            font-size: 1.1em;
+        }
+        &-done {
+            z-index: 1 !important;
+            background-color: $blue-main;
+        }
+    }
+}

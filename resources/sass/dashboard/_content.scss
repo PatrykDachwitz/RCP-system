@@ -1,0 +1,41 @@
+.content {
+    flex: 1;
+    background-color: $gray-main;
+    min-height: 100vh;
+    max-height: 100vh;
+    flex: 1;
+    &-header {
+        flex: 80px 0;
+        background-color: $white-main;
+        &__title {
+            font-weight: 800;
+            color: $gray-second !important;
+        }
+
+        @media (min-width: $breakpoints-lg) {
+            /*box-shadow: -1px 1px 19px -10px rgb(38, 40, 45);*/
+        }
+
+    }
+
+    &-body {
+        flex: 1;
+
+        &__cart {
+            background-color: $white-main;
+            min-height: 90%;
+            min-width: 95%;
+            max-height: 90%;
+            max-width: 95%;
+            &-header {
+                background-color: $black-main;
+                flex: 60px 0;
+            }
+
+            &-body {
+                flex: 1;
+            }
+        }
+
+    }
+}

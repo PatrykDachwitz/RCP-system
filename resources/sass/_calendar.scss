@@ -1,0 +1,31 @@
+$size-calendar: 14.27%;
+
+.calendar {
+    flex: 1;
+    &-body {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1;
+        &__single {
+            flex: $size-calendar 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #eee;
+        }
+    }
+
+    &-header {
+        display: flex;
+        flex-wrap: nowrap;
+        flex: 40px 0;
+        &__tittle {
+            & span {
+                color: $black-second !important;
+                font-weight: 600;
+            }
+            flex: $size-calendar 1;
+            border: 1px solid #eee;
+        }
+    }
+}

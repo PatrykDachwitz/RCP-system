@@ -1,0 +1,42 @@
+* {
+    color: #eee !important;
+}
+
+$reed-main: #FC5130;
+$green-main: #CAFFD0;
+$black-main: #303036;
+$black-second: #050401;
+$gray-main: #EFEFEF;
+$gray-second: #494949;
+$blue-main: #30BCED;
+$white-second: #FFFFFF;
+$white-main: #FFFAFF;
+$breakpoints-lg: 992px;
+
+.text-blue {
+    color: $blue-main !important;
+}
+.text-white {
+    color: $white-second !important;
+}
+.text-success {
+    color: $green-main !important;
+}
+
+.text-black {
+    color: $black;
+}
+
+.text-gray {
+    color: $gray-second !important;
+}
+.text-gray-main {
+    color: $gray-main !important;
+}
+
+.text-danger {
+    color: $reed-main !important;
+}
+@import "content";
+@import "navigation";
+@import "profile";

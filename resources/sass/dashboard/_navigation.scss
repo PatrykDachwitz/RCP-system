@@ -1,0 +1,6 @@
+.navigation {
+    background-color: $black-main;
+    @media (min-width: $breakpoints-lg) {
+        border-right: solid 1px $gray-second;
+    }
+}
