@@ -1,0 +1,11 @@
+.notifications {
+    max-width: 250px !important;
+    border-right: solid 1px $gray-second;
+    &-header {
+        border-bottom: solid 1px $gray-second
+    }
+}
+
+.notification {
+    border-bottom: solid 1px $gray-second;
+}

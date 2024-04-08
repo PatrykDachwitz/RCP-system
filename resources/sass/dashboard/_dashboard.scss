@@ -2,16 +2,7 @@
     color: #eee !important;
 }
 
-$reed-main: #FC5130;
-$green-main: #CAFFD0;
-$black-main: #303036;
-$black-second: #050401;
-$gray-main: #EFEFEF;
-$gray-second: #494949;
-$blue-main: #30BCED;
-$white-second: #FFFFFF;
-$white-main: #FFFAFF;
-$breakpoints-lg: 992px;
+
 
 .text-blue {
     color: $blue-main !important;
@@ -20,11 +11,15 @@ $breakpoints-lg: 992px;
     color: $white-second !important;
 }
 .text-success {
-    color: $green-main !important;
+  //  color: $green-main !important;
 }
 
 .text-black {
     color: $black;
+}
+
+.text-dark {
+    color: $black-main !important;
 }
 
 .text-gray {
@@ -32,6 +27,16 @@ $breakpoints-lg: 992px;
 }
 .text-gray-main {
     color: $gray-main !important;
+}
+
+.bg-dark {
+    background-color: $black-main !important;
+}
+.bg-gray {
+    background-color: $gray-second;
+}
+.bg-gray-light {
+    background-color: $gray-main;
 }
 
 .text-danger {

@@ -23,6 +23,7 @@
                 <img src="/assets/home-white.png" class="mt-lg-5" width="25" height="25"  alt="home"/>
             </div>
         </nav>
+
         <section class="profile d-none d-lg-flex flex-column px-4 pt-5 text-start">
             <img src="/assets/profil.png" width="150" height="150"  alt="home" class="rounded-circle"/>
             <div class="profile__detail">
@@ -45,37 +46,34 @@
             </div>
 
         </section>
-        <section class="content d-flex flex-column">
-            <div class="content-header d-flex align-items-center shadow">
-                <span class="ps-3 fs-4 content-header__title">Zarejestrowana obecność</span>
-            </div>
-            <div class="content-body d-flex justify-content-center align-items-center">
-                <div class="shadow content-body__cart d-flex flex-column rounded-2 overflow-hidden">
-                    <div class="content-body__cart-header d-flex align-items-center">
-                        <span class="fs-4 ps-4 text-white">Test</span>
-                    </div>
-                    <div class="content-body__cart-body d-flex flex-column">
-                        <div class="d-flex w-100 min-vh-100 top-0 start-0 justify-content-center align-items-center">
-                            <div>
-                                <div>
-                                    Zgłoś urlop
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <span>Od dnia</span>
-                                    <select>
-
-                                    </select>
-                                    <span>Do dnia</span>
-                                    <select>
-
-                                    </select>
-                                    
-                                </div>
-                            </div>
-                        </div>
+        <section class="content min-vh-100 max-vh-100 d-flex justify-content-center align-items-center">
+            <div class="content-body d-flex flex-column">
+                <div class="content-body__header d-flex align-items-center">
+                    <span class="fs-4 ps-4 text-white">Test</span>
+                </div>
+                <div class="content-body__body d-flex flex-column overflow-y-scroll">
+                    <div class="d-flex flex-column">
+                        @for($i = 0; $i < 50; $i++)
+                            <div class="text-danger">testsefds</div>
+                        @endfor
                     </div>
                 </div>
             </div>
+
+<!--            <div class="content-body d-flex justify-content-center align-items-center">
+&lt;!&ndash;                <div class="shadow content-body__cart d-flex flex-column rounded-2 overflow-hidden">
+                    <div class="content-body__cart-header d-flex align-items-center">
+                        <span class="fs-4 ps-4 text-white">Test</span>
+                    </div>
+                    <div class="content-body__cart-body d-flex flex-column overflow-y-scroll">
+                        <div class="d-flex flex-column">
+                            @for($i = 0; $i < 50; $i++)
+                                <div class="text-danger">testsefds</div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>&ndash;&gt;
+            </div>-->
         </section>
     </body>
 </html>
