@@ -5,18 +5,27 @@
  */
 
 import './bootstrap';
-import { createApp } from 'vue';
+import {createApp, ref} from 'vue';
 import {router} from "@/route.js";
 import Application from "@/Application.vue";
+import {getLanguage} from "@/single-function/language.js";
+import addHoliday from "@/views/addHoliday.vue";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
+const language = getLanguage();
+const availableComponents = {
+  addHoliday,
+    empty
+};
 
 createApp(Application)
     .use(router)
+    .provide('lang', language)
+    .provide('availableComponents', availableComponents)
     .mount('#app');
 /**
  * The following block of code may be used to automatically register your

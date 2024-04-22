@@ -17,3 +17,7 @@
 
 
 @import "history";
+
+div#app {
+    max-height: 100vh !important;
+}

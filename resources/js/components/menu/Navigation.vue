@@ -21,41 +21,37 @@ provide('activeMenu', activeMenu);
 
         <div class="d-flex flex-lg-column">
             <ul class="list-unstyled">
-                <li>
-                    <navigation-link
-                        href=""
-                        nameImage="calendar-check-gray.png"
-                        keyMenu=""
-                    />
-                </li>
-                <li>
-                    <navigation-link
-                        href=""
-                        nameImage="calendar-check-gray.png"
-                        keyMenu=""
-                    />
-                </li>
-                <li>
-                    <navigation-link
-                        href=""
-                        nameImage="calendar-check-gray.png"
-                        keyMenu=""
-                    />
-                </li>
-                <li>
-                    <navigation-link
-                        href=""
-                        nameImage="calendar-check-gray.png"
-                        keyMenu=""
-                    />
-                </li>
-                <li>
-                    <navigation-link
-                        href=""
-                        nameImage="calendar-check-gray.png"
-                        keyMenu=""
-                    />
-                </li>
+                <navigation-link
+                    href="notification"
+                    nameImage="notification-gray.png"
+                    nameImageMove="notification-white.png"
+                    keyMenu="notification"
+                />
+                <navigation-link
+                    href="holiday"
+                    nameImage="calendar-add-gray.png"
+                    nameImageMove="calendar-add-white.png"
+                    keyMenu="addHolidays"
+                />
+                <navigation-link
+                    href="frequency"
+                    nameImage="calendar-wait-gray.png"
+                    nameImageMove="calendar-wait-white.png"
+                    keyMenu="frequency"
+                />
+                <navigation-link
+                    href="history"
+                    nameImage="calendar-check-gray.png"
+                    nameImageMove="calendar-check-white.png"
+                    keyMenu="historyFrequency"
+                />
+                <navigation-link
+                    href="contact"
+                    nameImage="support-gray.png"
+                    nameImageMove="support-white.png"
+                    keyMenu="contactSupport"
+                />
+
             </ul>
         </div>
 

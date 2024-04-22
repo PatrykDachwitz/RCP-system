@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,7 +11,9 @@
 <div class="container-fluid d-flex flex-column flex-lg-row min-vh-100 m-0 p-0 align-items-stretch overflow-hidden" id="app">
 
 </div>
-
+<div style="display: none !important;" data-laguage>
+    @json(__('content'))
+</div>
 @vite('resources/js/app.js')
 @vite('resources/sass/app.scss')
 </body>
