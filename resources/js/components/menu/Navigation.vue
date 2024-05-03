@@ -1,6 +1,7 @@
 <script setup>
 import {provide, ref, watch} from "vue";
 import NavigationLink from "@/components/menu/NavigationLink.vue";
+import NavigationPopUp from "@/components/menu/NavigationPopUp.vue";
 
 const activeMenu = ref(false);
 
@@ -27,8 +28,8 @@ provide('activeMenu', activeMenu);
                     nameImageMove="notification-white.png"
                     keyMenu="notification"
                 />
-                <navigation-link
-                    href="holiday"
+                <navigation-pop-up
+                    href="addHoliday"
                     nameImage="calendar-add-gray.png"
                     nameImageMove="calendar-add-white.png"
                     keyMenu="addHolidays"

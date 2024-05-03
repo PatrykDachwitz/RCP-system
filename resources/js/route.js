@@ -26,10 +26,6 @@ const routes = [
         component: historyView,
         name: 'history'
     }, {
-        path: '/holidays',
-        component: addHoliday,
-        name: 'holiday'
-    }, {
         path: '/frequency',
         component: frequency,
         name: 'frequency'

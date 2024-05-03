@@ -1,5 +1,7 @@
 <script setup>
+import {inject} from "vue";
 
+const lang = inject('lang');
 </script>
 
 <template>
@@ -9,9 +11,9 @@
                 <div class="text-dark d-flex justify-content-between align-items-center">
                     <div class="text-dark">
                         <strong class="text-dark">12.02.2024 Poniedziałek</strong>
-                        - Wejśćei: <span class="text-danger">6:15</span>
+                        - {{ lang['entry'] }}: <span class="text-danger">6:15</span>
                         -
-                        Wyjście: <span class="text-success">14:00</span>
+                        {{ lang['exit'] }}: <span class="text-success">14:00</span>
                     </div>
                     <div>
                         <img src="/assets/add-gray.png" width="20" height="20" alt="add event history"/>

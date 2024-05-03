@@ -1,12 +1,10 @@
 <script setup>
-
-
 import Navigation from "@/components/menu/Navigation.vue";
 import Profil from "@/components/menu/Profil.vue";
 import {inject} from "vue";
 
-const availableComponents = inject('availableComponents')
-
+const availableComponentsInPopUp = inject('availableComponentsInPopUp')
+const currentSelectPopUp = inject('currentSelectPopUp')
 </script>
 
 <template>
@@ -24,7 +22,7 @@ const availableComponents = inject('availableComponents')
                 </span>
             </div>
             <div class="content-body__body d-flex flex-column overflow-y-auto position-relative">
-<!--                <component :is="availableComponents[empty]"/>-->
+                <component :is="availableComponentsInPopUp[currentSelectPopUp]"/>
                 <slot name="content-body">
                 </slot>
             </div>

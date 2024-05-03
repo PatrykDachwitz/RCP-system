@@ -15,5 +15,14 @@ return [
     'phoneNumber' => 'Numer Telefonu',
     'tittle' => 'Tytuł',
     'description' => 'Opis',
+    'accept' => 'Ackeptuje',
+    'date-start' => 'Data od',
+    'date-end' => 'Data do',
+    'typeHoliday' => 'Wybierz rodzaj urlopu',
+    'sendHoliday' => 'Zgłoś urlop',
+    'cancel' => 'Anuluj',
+    'entry' => 'Wejście',
+    'exit' => 'Wyjście',
+
 
 ];

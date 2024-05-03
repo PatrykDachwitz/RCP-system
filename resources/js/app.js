@@ -5,11 +5,12 @@
  */
 
 import './bootstrap';
-import {createApp, ref} from 'vue';
+import {createApp, inject, ref} from 'vue';
 import {router} from "@/route.js";
 import Application from "@/Application.vue";
 import {getLanguage} from "@/single-function/language.js";
-import addHoliday from "@/views/addHoliday.vue";
+import {availableComponentsInPopUp} from "@/availableComponentsInPopUp.js";
+
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -17,15 +18,14 @@ import addHoliday from "@/views/addHoliday.vue";
  * to use in your application's views. An example is included for you.
  */
 const language = getLanguage();
-const availableComponents = {
-  addHoliday,
-    empty
-};
+const currentSelectPopUp = ref('addHoliday')
+
 
 createApp(Application)
     .use(router)
+    .provide('currentSelectPopUp', currentSelectPopUp)
     .provide('lang', language)
-    .provide('availableComponents', availableComponents)
+    .provide('availableComponentsInPopUp', availableComponentsInPopUp)
     .mount('#app');
 /**
  * The following block of code may be used to automatically register your
