@@ -6,6 +6,7 @@ dataset('getRoutes', [
     fn() => route('departments.index'),
     fn() => route('histories.index'),
     fn() => route('holidays.index'),
+    fn() => route('typeHolidays.index'),
     fn() => route('days.show', [
         'day' => 1
     ]),

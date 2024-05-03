@@ -1,13 +1,15 @@
+import {ref} from "vue";
 import {createRouter, createWebHistory} from "vue-router";
-import Home from "@/views/home.vue";
-import notifications from "@/views/notifications.vue";
-import contacts from "@/views/contacts.vue";
-import holidays from "@/views/holidays.vue";
 import frequency from "@/views/frequency.vue";
 import historyView from "@/views/historyView.vue";
+import contacts from "@/views/contacts.vue";
+import notifications from "@/views/notifications.vue";
+import Home from "@/views/home.vue";
 import addHoliday from "@/views/addHoliday.vue";
 
-
+export const availableComponentsInPopUp = ref({
+    addHoliday
+});
 const routes = [
     {
         path: '/',

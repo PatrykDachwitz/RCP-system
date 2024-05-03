@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace App\Providers;
 
+use App\Repository\TypeHolidayRepository as TypeHolidayInterface;
+use App\Repository\Eloquent\TypeHolidayRepository;
 use App\Repository\DayRepository as DayRepositoryInterface;
 use App\Repository\Eloquent\DayRepository;
 use App\Repository\HistoryRepository as HistoryRepositoryInterface;
@@ -54,6 +56,10 @@ class RepositoryProvider extends ServiceProvider
         $this->app->singleton(
             PresenceRepositoryInterface::class,
             PresenceRepository::class,
+        );
+        $this->app->singleton(
+            TypeHolidayInterface::class,
+            TypeHolidayRepository::class,
         );
     }
 }

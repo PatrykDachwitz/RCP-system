@@ -6,10 +6,11 @@
 
 import './bootstrap';
 import {createApp, inject, ref} from 'vue';
-import {router} from "@/route.js";
+
 import Application from "@/Application.vue";
 import {getLanguage} from "@/single-function/language.js";
-import {availableComponentsInPopUp} from "@/availableComponentsInPopUp.js";
+import {availableComponentsInPopUp, router} from "@/settings.js";
+
 
 
 /**
@@ -18,7 +19,7 @@ import {availableComponentsInPopUp} from "@/availableComponentsInPopUp.js";
  * to use in your application's views. An example is included for you.
  */
 const language = getLanguage();
-const currentSelectPopUp = ref('addHoliday')
+const currentSelectPopUp = ref('none')
 
 
 createApp(Application)
