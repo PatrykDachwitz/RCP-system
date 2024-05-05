@@ -11,10 +11,26 @@ class TypeHoliday extends Model
     use HasFactory;
     use SoftDeletes;
 
-
+    protected $fillable = [
+        'name',
+        'active',
+    ];
 
     protected $casts =[
+        "name" => 'string',
         "name_holiday" => 'string',
-        "active" => 'integer',
+        "active" => 'boolean',
     ];
+
+    protected $appends = [
+      'name_holiday'
+    ];
+
+    public function getNameHolidayAttribute() {
+        if (in_array($this->name, array_keys(__("holidays")))) {
+            return __("holidays." . $this->name);
+        } else {
+            return __('holidays.empty');
+        }
+    }
 }

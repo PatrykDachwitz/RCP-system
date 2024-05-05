@@ -13,9 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test', function () {
+    $collectionRoute = Route::getRoutes();
+     dd($collectionRoute->getRoutesByName());
+});/*
 Route::get('{any}', function () {
     return view('start');
-})->where("any", ".*");
+})->where("any", ".*");*/
+
 //
 //Route::get('/login', function () {
 //
