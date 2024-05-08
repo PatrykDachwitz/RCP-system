@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\HistoryController;
 use App\Http\Controllers\Api\HolidayController;
 use App\Http\Controllers\Api\PositionController;
 use App\Http\Controllers\Api\PresenceController;
+use App\Http\Controllers\Api\TypeHolidayController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Api\DepartmentController;
@@ -38,4 +39,6 @@ Route::group([
     Route::apiResource('holidays', HolidayController::class);
     Route::apiResource('positions', PositionController::class);
     Route::apiResource('presences', PresenceController::class);
+    Route::get('/typeHolidays', [TypeHolidayController::class, 'index'])
+        ->name('typeHolidays.index');
 });

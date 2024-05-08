@@ -1,0 +1,24 @@
+.content {
+    flex: 1;
+    background-color: $gray-main;
+
+    &-body {
+        max-width: 95% !important;
+        min-width: 95% !important;
+        min-height: 90% !important;
+        max-height: 90% !important;
+        background-color: $white-main;
+
+        &__header {
+            background-color: $black-main;
+            flex: 60px 0;
+            min-height: 60px !important;
+            max-height: 60px !important;
+        }
+
+        &__body {
+            flex: 1;
+        }
+
+    }
+}

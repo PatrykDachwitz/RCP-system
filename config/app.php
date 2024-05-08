@@ -16,8 +16,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
-
+    'name' => env('APP_NAME', 'RCP System'),
+    'file_routes_api' => env('VITE_FILE_ROUTES_API', "/routes-api.json"),
     /*
     |--------------------------------------------------------------------------
     | Application Environment

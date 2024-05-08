@@ -1,0 +1,47 @@
+* {
+    color: #eee !important;
+}
+
+
+
+.text-blue {
+    color: $blue-main !important;
+}
+.text-white {
+    color: $white-second !important;
+}
+.text-success {
+  //  color: $green-main !important;
+}
+
+.text-black {
+    color: $black;
+}
+
+.text-dark {
+    color: $black-main !important;
+}
+
+.text-gray {
+    color: $gray-second !important;
+}
+.text-gray-main {
+    color: $gray-main !important;
+}
+
+.bg-dark {
+    background-color: $black-main !important;
+}
+.bg-gray {
+    background-color: $gray-second;
+}
+.bg-gray-light {
+    background-color: $gray-main;
+}
+
+.text-danger {
+    color: $reed-main !important;
+}
+@import "content";
+@import "navigation";
+@import "profile";
